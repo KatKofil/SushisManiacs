@@ -1,0 +1,72 @@
+<mat-toolbar
+class="app-toolbar"
+  color="white">
+  <mat-toolbar-row>
+     <button  mat-icon-button  (click)="sidenav.toggle()" fxHide fxShow.lt-md>
+       <mat-icon fxHide fxShow.lt-md>
+         {{sidenav.opened ? 'menu_open' : 'menu'}}
+       </mat-icon>
+    </button>
+    <h1 [routerLink]="['/']" routerLinkActive="router-link-active">
+      <span>Sushis Maniacs</span>
+    </h1>
+    <span class="menu-spacer"></span>
+    <div fxShow="true" fxHide.lt-md>
+       <a *ngFor="let item of items" href="#" mat-button 
+          [routerLink]="[item.route]"
+          routerLinkActive="list-item-active">{{item.title}}</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav 
+               color="white"
+               #sidenav
+               fxHide fxShow.lt-md
+               [mode]="isMobile? 'over' : 'side'">
+      <mat-nav-list>
+        <a *ngFor="let item of items"  
+            mat-list-item
+            class="app-nav-list-icon"
+            href="#"
+            [routerLink]="[item.route]"
+            routerLinkActive="list-item-active">
+            {{item.title}}
+        </a>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<footer>
+  <div dir="ltr" fxLayoutGap="40px">    
+    <h2 fxFlex='10' [routerLink]="['/']" routerLinkActive="router-link-active">
+      <span>Sushis Maniacs Informations</span>
+    </h2>
+    <div fxFlex>
+      <span>Reseaux:</span>
+      <ul>
+        <li *ngFor="let item of filtreItemsReseaux()" class="mat-small">
+          {{item.name}}
+          <mat-icon>
+            {{item.icon}}
+          </mat-icon>
+        </li>
+      </ul>
+    </div>
+    <div fxFlex>
+      <span>Contact:</span>
+      <ul>
+        <li *ngFor="let item of filtreItemsContact()" class="mat-small">
+          {{item.name}}
+          <mat-icon>
+            {{item.icon}}
+          </mat-icon>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
