@@ -23,6 +23,13 @@ const routes: Routes = [
     data:{
       title: "Login" 
     },
+  },  
+  {
+    path:'register',
+    component:LoginComponent,
+    data:{
+      title: "Register" 
+    },
   }
 ];
 
