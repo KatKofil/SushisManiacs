@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
-import { NewsComponent } from './news/news.component';
 import { LoginComponent } from './login/login.component';
 
 
@@ -23,13 +22,6 @@ const routes: Routes = [
     component:LoginComponent,
     data:{
       title: "Login" 
-    },
-  },
-  {
-    path:'news',
-    component:NewsComponent,
-    data:{
-      title: "News" 
     },
   }
 ];

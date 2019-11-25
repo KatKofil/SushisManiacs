@@ -7,5 +7,4 @@ export class MenuItem {
 
 export const MENUITEMS: MenuItem[] = [
     {id:1 , title:'Login', route:'login', icon:''},
-    {id:2 , title:'News', route:'news', icon:''},
 ];
