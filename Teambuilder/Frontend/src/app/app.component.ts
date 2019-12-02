@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem, MENUITEMS } from './items/item-menu';
-import { ContactItem, CONTACTITEMS } from './items/item-contact'
+import { MenuItem, MENUITEMS } from './_model/item-menu';
+import { ContactItem, CONTACTITEMS } from './_model/item-contact'
 
 @Component({
   selector: 'app-root',

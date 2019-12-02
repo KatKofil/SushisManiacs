@@ -1,31 +1,39 @@
 <!-- Create a home-contact and modify this one -->
 <div class="container">
     <mat-card>
-        <mat-card-title>Login</mat-card-title>
+        <mat-card-title>Register</mat-card-title>
         <mat-card-content>
-            <mat-form-field>
-                <input matInput placeholder="Pseudo" #firstname>
-            </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="PassWord" #lastname>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="PassWord" #lastname>
-        </mat-form-field>
-        <form>
-            <mat-form-field>
-                <input matInput placeholder="Email" [formControl]="emailFormControl"
-                    [errorStateMatcher]="matcher" #emailadresse>
-                <mat-hint></mat-hint>
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong> to register
-                </mat-error>
-            </mat-form-field>
-        </form>
-        <button mat-raised-button (click)="sendMsg(emailadresse.value, firstname.value, lastname.value, subject.value, message.value)">Register</button>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Pseudo" #firstname>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="PassWord" #lastname>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="PassWord" #lastname>
+                </mat-form-field>
+            </div>
+            <form>
+                <mat-form-field>
+                    <input matInput placeholder="Email" [formControl]="emailFormControl"
+                        [errorStateMatcher]="matcher" #emailadresse>
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong> to register
+                    </mat-error>
+                </mat-form-field>
+            </form>
+            <div class="button">
+                <button type="submit" mat-button>Register</button>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
