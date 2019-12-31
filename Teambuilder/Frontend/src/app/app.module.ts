@@ -25,6 +25,7 @@ import { ProfileComponent } from './Profile/profile/profile.component';
 import { TeamComponent } from './Team/team/team.component';
 import { StuffComponent } from './Stuff/stuff/stuff.component';
 import { CaracterComponent } from './Caracter/caracter/caracter.component';
+import { TeamdetailComponent } from './TeamDetail/teamdetail/teamdetail.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CaracterComponent } from './Caracter/caracter/caracter.component';
     ProfileComponent,
     TeamComponent,
     StuffComponent,
-    CaracterComponent
+    CaracterComponent,
+    TeamdetailComponent
   ],
   imports: [
     BrowserModule,

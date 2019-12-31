@@ -54,8 +54,16 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         function register() {
             const {username, password, email} = body
-            users.push({idUser : 2, username: username, password : password, email: email, lvlRole: 1})
+            const user: User = {idUser : 2, username: username, password : password, email: email, lvlRole: 1};
+            users.push(user)
             console.log(users)
+            return ok({
+                idUser: user.idUser,
+                username: user.username,
+                email: user.email,
+                lvlRole: 0,
+                token: 'fake-jwt-token'
+            })
         }
 
         function getUsers() {
