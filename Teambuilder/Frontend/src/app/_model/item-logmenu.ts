@@ -6,5 +6,8 @@ export class MenuLogItems {
 }
 
 export const MENULOGITEMS: MenuLogItems[] = [
-    {id:2, title:'Profile', route:'profile', icon:''},
+    {id:0, title:'Profile', route:'profile', icon:''},
+    {id:1, title:'Team', route:'team', icon:''},
+    {id:2, title:'Stuff', route:'stuff', icon:''},
+    {id:3, title:'Caracter', route:'caracter', icon:''},
 ];

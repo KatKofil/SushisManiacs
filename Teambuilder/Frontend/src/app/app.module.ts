@@ -21,6 +21,10 @@ import { MatCardModule } from '@angular/material/card';
 import { fakeBackendProvider } from './_helper/fake-backend';
 import { JwtInterceptor } from './_helper/jwt.interceptor';
 import { ErrorInterceptor } from './_helper/error.interceptor';
+import { ProfileComponent } from './Profile/profile/profile.component';
+import { TeamComponent } from './Team/team/team.component';
+import { StuffComponent } from './Stuff/stuff/stuff.component';
+import { CaracterComponent } from './Caracter/caracter/caracter.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { ErrorInterceptor } from './_helper/error.interceptor';
     AppComponent,
     HomepageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    TeamComponent,
+    StuffComponent,
+    CaracterComponent
   ],
   imports: [
     BrowserModule,

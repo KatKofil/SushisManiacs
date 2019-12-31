@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 import { User } from '../_model/user';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationService {
+export class RegisterService {
     private currentUserSubject: BehaviorSubject<any>;
     public currentUser: Observable<any>;
 
@@ -20,20 +20,14 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-    login(username: string, password: string) {
-        console.log("on y passe bien")
-        return this.http.post(`${environment.apiUrl}/users/authenticate`, { username, password })
+    register(username: string, password: string, email: string) {
+      console.log("on y passe")
+        return this.http.post(`${environment.apiUrl}/users/register`, { username, password, email })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;
             }));
-    }
-
-    logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
-        this.currentUserSubject.next(null);
     }
 }

@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { User } from '../_model';
+import { registerLocaleData } from '@angular/common';
 
 const users: User[] = [{ idUser: 1, username: 'test', password: 'test', email: 'User', lvlRole:0 }];
 
@@ -26,6 +27,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return authenticate();
                 case url.endsWith('/users') && method === 'GET':
                     return getUsers();
+                case url.endsWith('/users/register') && method === 'POST':
+                    return register();
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
@@ -47,6 +50,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 lvlRole: 0,
                 token: 'fake-jwt-token'
             })
+        }
+
+        function register() {
+            const {username, password, email} = body
+            users.push({idUser : 2, username: username, password : password, email: email, lvlRole: 1})
+            console.log(users)
         }
 
         function getUsers() {
