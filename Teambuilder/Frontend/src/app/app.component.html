@@ -12,9 +12,17 @@ class="app-toolbar"
     </h1>
     <span class="menu-spacer"></span>
     <div fxShow="true" fxHide.lt-md>
+      <div *ngIf="!isLog()">
        <a *ngFor="let item of items" href="#" mat-button 
           [routerLink]="[item.route]"
           routerLinkActive="list-item-active">{{item.title}}</a>
+      </div>
+      <div *ngIf="isLog()">
+        <a *ngFor="let item of logItems" href="#" mat-button 
+           [routerLink]="[item.route]"
+           routerLinkActive="list-item-active">{{item.title}}</a>
+        <a href="#" mat-button (click)="logout()">Logout</a>
+      </div>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -26,14 +34,33 @@ class="app-toolbar"
                fxHide fxShow.lt-md
                [mode]="isMobile? 'over' : 'side'">
       <mat-nav-list>
-        <a *ngFor="let item of items"  
+        <div *ngIf="!isLog()">
+          <a *ngFor="let item of items"  
             mat-list-item
             class="app-nav-list-icon"
             href="#"
             [routerLink]="[item.route]"
             routerLinkActive="list-item-active">
             {{item.title}}
+          </a>
+        </div>
+        <div *ngIf="isLog()">
+          <a *ngFor="let item of logItems"  
+            mat-list-item
+            class="app-nav-list-icon"
+            href="#"
+            [routerLink]="[item.route]"
+            routerLinkActive="list-item-active">
+            {{item.title}}
+          </a>
+          <a *ngFor="let item of logItems"  
+          mat-list-item
+          class="app-nav-list-icon"
+          href="#"
+          (click)="logout()">
+          Logout
         </a>
+        </div>
       </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fxFlexFill>

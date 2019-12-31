@@ -1,0 +1,32 @@
+{
+    "idCaracter": 0, 
+    "name": "Madame Uppercut",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 4,
+    "makiTime": 4,
+    "sashilmiTime": 4,
+    "actifDescription": "description de l'actif du personnage"
+}
+
+{
+    "idStuff": 0,
+    "name": "baquette",
+    "describStuff": "descripion du stuff",
+    "pointMaki": 2,
+    "pointBrochette": 3,
+    "pointSushi": 2,
+    "timeMaki": 1,
+    "timeBrochette": 2,
+    "timeSushi": 2,
+    "timeSashimi": 3,
+    "saturation": 3,
+}
+
+{
+    "idUser": 0,
+    "Pseudo": "Kofil",
+    "HashPass": "**********",
+    "Salt": "ez",
+    "Email": "kat.kofil@yahoo.fr",
+    "lvlRole": 0
+}
