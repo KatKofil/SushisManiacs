@@ -1,1 +1,32 @@
-<p>stuff works!</p>
+<div class="container">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Filter" [(ngModel)]="value">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button (click)="console()" >test</button>
+
+      
+    <mat-table [dataSource]="stuff">
+        <ng-container matColumnDef="idStuff">
+            <!-- Id Column -->
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let stuff" routerLink="/stuff/{{stuff.idStuff}}" routerLinkActive="router-link-active"  > {{stuff.idStuff}} </mat-cell>         </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let stuff"> {{stuff.name}} </mat-cell>
+          </ng-container>
+        
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let stuff"> {{stuff.describStuff}} </mat-cell>
+          </ng-container>
+        
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

@@ -1,0 +1,201 @@
+[{
+    "idCaracter": 0,
+    "name": "Roger",
+    "describeCaracter": "",
+    "sushieTime": 0.5,
+    "makiTime": 1
+    "brochetteTime": 0.5,
+    "sashilmiTime": 0.5,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 1,
+    "name": "Sun",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 1,
+    "makiTime": 0.5,
+    "brochetteTime": 0.5,
+    "sashilmiTime": 0.5,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 2,
+    "name": "Bjorn",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 0.5,
+    "makiTime": 0.5,
+    "brochetteTime": 1,
+    "sashilmiTime": 0.5,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 3,
+    "name": "yumme",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 0.5,
+    "makiTime": 0.5,
+    "brochetteTime": 0.5,
+    "sashilmiTime": 1,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 4,
+    "name": "Mysha",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 0.75,
+    "makiTime": 0.75,
+    "brochetteTime": 0.75,
+    "sashilmiTime": 1.25,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 5,
+    "name": "Akyo",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 0.75,
+    "makiTime": 0.75,
+    "brochetteTime": 1.25,
+    "sashilmiTime": 0.75,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 6,
+    "name": "Roman",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 1.25,
+    "makiTime": 0.75,
+    "brochetteTime": 0.75,
+    "sashilmiTime": 0.75,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 7,
+    "name": "Demba",
+    "describeCaracter": "description du personnage",
+    "sushieTime": 0.75,
+    "makiTime": 1.25,
+    "brochetteTime": 0.75,
+    "sashilmiTime": 0.75,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 8,
+    "name": "Takemi",
+    "describeCaracter": "Spécialiste sushie",
+    "sushieTime": 2,
+    "makiTime": 1,
+    "brochetteTime": 1,
+    "sashilmiTime": 1,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 9,
+    "name": "Doloresse",
+    "describeCaracter": "Spécialiste brochetteTime",
+    "sushieTime": 1,
+    "makiTime": 1,
+    "brochetteTime": 2,
+    "sashilmiTime": 1,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 10,
+    "name": "Liv",
+    "describeCaracter": "Spécialiste Sashimie",
+    "sushieTime": 1,
+    "makiTime": 1,
+    "brochetteTime": 1,
+    "sashilmiTime": 2,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 11,
+    "name": "Hyun-Su",
+    "describeCaracter": "Spécialiste Maki",
+    "sushieTime": 1,
+    "makiTime": 2,
+    "brochetteTime": 1,
+    "sashilmiTime": 1,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 12,
+    "name": "Chronos",
+    "describeCaracter": "Maitre Du Temps",
+    "sushieTime": 1.25,
+    "makiTime": 1.25,
+    "brochetteTime": 1.25,
+    "sashilmiTime": 1.25,
+    "actifDescription": "PeutManger2fois+vitePendant30Seconde"
+},
+{
+    "idCaracter": 13,
+    "name": "Poseidon",
+    "describeCaracter": "Maitre Poisson",
+    "sushieTime": 1.75,
+    "makiTime": 1.75,
+    "brochetteTime": 1.75,
+    "sashilmiTime": 1.75,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 14,
+    "name": "Hades",
+    "describeCaracter": "Maitre Charbonnier",
+    "sushieTime": 0.5,
+    "makiTime": 0.5
+    "brochetteTime": 4,
+    "sashilmiTime": 0.5,
+    "actifDescription": "description de l'actif du personnage"
+},
+{
+    "idCaracter": 15,
+    "name": "Dionysos",
+    "describeCaracter": "Maitre Des Liqueur",
+    "sushieTime": 1,
+    "makiTime": 1,
+    "brochetteTime": 1,
+    "sashilmiTime": 1,
+    "actifDescription": "quandboisunliquidedoubleLaConsomation"
+},
+{
+    "idCaracter": 16,
+    "name": "Odin",
+    "describeCaracter": "Créateur Des Hommes",
+    "sushieTime": 1,
+    "makiTime": 1,
+    "brochetteTime": 1,
+    "sashilmiTime": 1,
+    "actifDescription": "quandSeulDivinitéGagnex3/seconde"
+},
+{
+    "idCaracter": 17,
+    "name": "Freya",
+    "describeCaracter": "Déesse De La Beauté",
+    "sushieTime": 1,
+    "makiTime": 1,
+    "brochetteTime": 1,
+    "sashilmiTime": 1,
+    "actifDescription": "QuandSeulPersoFémininGagne x2,5/seconde"
+},
+{
+    "idCaracter": 18,
+    "name": "Saga",
+    "describeCaracter": "Déesse Poétique",
+    "sushieTime": 1.5,
+    "makiTime": 1.5,
+    "brochetteTime": 1.5,
+    "sashilmiTime": 1.5,
+    "actifDescription": "Donne1coupeDeSakeAchaquePerso"
+},
+{
+    "idCaracter": 19,
+    "name": "Ran",
+    "describeCaracter": "Ame Tempétueuse",
+    "sushieTime": 2.5,
+    "makiTime": 2.5,
+    "brochetteTime": 1,
+    "sashilmiTime": 2.5,
+    "actifDescription": "gagnex1.5QuandAvecPoissonier"
+}]
+

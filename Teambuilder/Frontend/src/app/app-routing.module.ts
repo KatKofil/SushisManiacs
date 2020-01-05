@@ -10,6 +10,9 @@ import { CaracterComponent } from './Caracter/caracter/caracter.component'
 import { from } from 'rxjs';
 import { AuthGuard } from './_helper/auth.guard';
 import { TeamdetailComponent } from './TeamDetail/teamdetail/teamdetail.component'
+import { CaracterdetailComponent } from "./CaracterDetail/caracterdetail/caracterdetail.component";
+import { StuffdetailComponent } from "./StuffDetail/stuffdetail/stuffdetail.component";
+
 
 const routes: Routes = [
   {
@@ -37,7 +40,23 @@ const routes: Routes = [
     component:TeamdetailComponent,
     canActivate: [AuthGuard],
     data:{
-      title: "Detail" 
+      title: "Team Detail" 
+    },
+  },
+  {
+    path:'caracter/:id',
+    component:CaracterdetailComponent,
+    canActivate: [AuthGuard],
+    data:{
+      title: "Caracter Detail" 
+    },
+  },
+  {
+    path:'stuff/:id',
+    component:StuffdetailComponent,
+    canActivate: [AuthGuard],
+    data:{
+      title: "Caracter Detail" 
     },
   },
   {

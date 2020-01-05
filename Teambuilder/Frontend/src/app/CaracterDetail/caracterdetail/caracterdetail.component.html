@@ -1,0 +1,15 @@
+<div *ngIf="caracter" class="container">
+    <h2> {{caracter.caracter.name}} </h2>
+
+    <p> {{caracter.caracter.describStuff}} </p>
+
+    <h3>Time</h3>
+    <mat-list>
+        <mat-list-item> x{{caracter.caracter.sushieTime | number : fractionSize}} </mat-list-item>
+        <mat-list-item> x{{caracter.caracter.makiTime | number : fractionSize}} </mat-list-item>
+        <mat-list-item> x{{caracter.caracter.brochetteTime | number : fractionSize}} </mat-list-item>
+        <mat-list-item> x{{caracter.caracter.sashimiTime | number : fractionSize}} </mat-list-item>
+    </mat-list>
+    <p>{{caracter.caracter.actifDescription}}</p>
+
+</div>
