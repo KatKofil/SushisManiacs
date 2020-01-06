@@ -30,6 +30,9 @@ export class TeamdetailComponent implements OnInit, AfterViewInit, OnDestroy {
   public stuffCtrl: FormControl = new FormControl();
   public stuffFilterCtrl: FormControl = new FormControl();
   public filtredStuff: ReplaySubject<Stuff[]> = new ReplaySubject<Stuff[]>(1);
+  
+  private sendTeam: any = {};
+
 
   @ViewChild('caracterSelect', { static: true }) caracterSelect: MatSelect;
   @ViewChild('stuffSelect', { static: true }) stuffSelect: MatSelect;
@@ -172,14 +175,20 @@ export class TeamdetailComponent implements OnInit, AfterViewInit, OnDestroy {
     this.newCaracter.forEach((element, index) => {
       this.newTeam.push({idTeam: id, idCaracter: element, idStuff: this.newStuff[index]})
     });
-    console.log(this.newTeam);
-    this.teamService.saveTeam(this.newTeam);
+    this.sendTeam = JSON.stringify(this.newTeam);
+  }
+
+  send() {
+    console.log(this.sendTeam);
+    this.teamService.saveTeam(this.sendTeam);
   }
 
   cons(){
     console.log(this.team)
     console.log(this.newCaracter)
     console.log(this.newStuff)
+    console.log(this.stuffSelect)
+    console.log(this.caracterSelect)
     console.log(this.caracters)
     console.log(this.caracterCtrl.value.name)
   }

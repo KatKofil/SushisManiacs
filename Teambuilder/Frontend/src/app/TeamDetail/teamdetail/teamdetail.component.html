@@ -10,7 +10,7 @@
     </div>
     <div fxFlex="50">
     <mat-form-field>
-        <mat-select [formControl]="caracterCtrl" placeholder="caracters" #singleSelect>
+        <mat-select [formControl]="caracterCtrl" placeholder="caracters" #caracterSelect>
           <mat-option>
             <ngx-mat-select-search [formControl]="caracterFilterCtrl"></ngx-mat-select-search>
           </mat-option>
@@ -21,7 +21,7 @@
       </mat-form-field>
 
     <mat-form-field>
-        <mat-select [formControl]="stuffCtrl" placeholder="stuffs" #singleSelect>
+        <mat-select [formControl]="stuffCtrl" placeholder="stuffs" #stuffSelect>
           <mat-option>
             <ngx-mat-select-search [formControl]="stuffsFilterCtrl"></ngx-mat-select-search>
           </mat-option>
@@ -33,4 +33,5 @@
     </div>
     </div>
     <button (click)="save()" >save</button>
+    <button (click)="send()" >send</button>
 </div>

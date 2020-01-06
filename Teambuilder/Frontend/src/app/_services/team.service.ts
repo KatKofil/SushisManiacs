@@ -22,7 +22,7 @@ export class TeamService {
     return this.http.post(`${environment.apiUrl}/team`, { idTeam }) as Observable<TeamCaracter[]>;
   }
 
-  saveTeam(newTeam: TeamCaracter[]){
+  saveTeam(newTeam: string){
     return this.http.post(`${environment.apiUrl}/team/upload`, { newTeam })
   }
 }

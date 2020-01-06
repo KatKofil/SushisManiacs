@@ -870,16 +870,16 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             })
         }
 
-        // function uploadTeam() {
-        //     const { team } = body;
-        //     // console.log(body)
-        //     // teamCaracterList.forEach((element, index) => {
-        //     //     if (element.idTeam === team[0].idTeam)
-        //     //     teamCaracterList.splice(index, 1);
-        //     // });
-        //     console.log(team)
-        //     console.log(teamCaracterList);
-        // }
+        function uploadTeam() {
+            const {team} = body;
+            console.log(body)
+            // teamCaracterList.forEach((element, index) => {
+            //     if (element.idTeam === team[0].idTeam)
+            //     teamCaracterList.splice(index, 1);
+            // });
+            console.log(team)
+            console.log(teamCaracterList);
+        }
 
         function getStuff() {
             const { id } = body;
