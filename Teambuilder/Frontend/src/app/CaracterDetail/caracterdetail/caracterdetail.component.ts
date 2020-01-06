@@ -20,10 +20,10 @@ export class CaracterdetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void{
-    this.getStuff();
+    this.getCaracter();
   }
 
-  getStuff(): void {
+  getCaracter(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.caracterService.getCaracter(id)
       .subscribe(caracter => this.caracter = caracter);

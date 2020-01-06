@@ -1,1 +1,36 @@
-<p>teamdetail works!</p>
+<button (click)="cons()">test</button>
+<div class="container" *ngIf="team && caracters && stuffs">
+    <button (click)="initAll()">init</button>
+    <div>{{team.team.idTeam}} </div>
+    <div *ngFor="let team of team.team" fxLayout="row">
+        <div fxFlex="50">
+        <div>{{caracters[team.idCaracter].name}} </div>
+
+        <div>{{stuffs[team.idStuff].name}} </div>
+    </div>
+    <div fxFlex="50">
+    <mat-form-field>
+        <mat-select [formControl]="caracterCtrl" placeholder="caracters" #singleSelect>
+          <mat-option>
+            <ngx-mat-select-search [formControl]="caracterFilterCtrl"></ngx-mat-select-search>
+          </mat-option>
+          <mat-option (click)="addCaracter()" *ngFor="let caracter of filtredCaracter | async" [value]="caracter">
+            {{caracter.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>
+        <mat-select [formControl]="stuffCtrl" placeholder="stuffs" #singleSelect>
+          <mat-option>
+            <ngx-mat-select-search [formControl]="stuffsFilterCtrl"></ngx-mat-select-search>
+          </mat-option>
+          <mat-option (click)="addStuff()" *ngFor="let stuff of filtredStuff | async" [value]="stuff">
+            {{stuff.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    </div>
+    <button (click)="save()" >save</button>
+</div>

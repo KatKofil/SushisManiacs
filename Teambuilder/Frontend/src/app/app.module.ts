@@ -28,7 +28,8 @@ import { CaracterComponent } from './Caracter/caracter/caracter.component';
 import { TeamdetailComponent } from './TeamDetail/teamdetail/teamdetail.component';
 import { CaracterdetailComponent } from './CaracterDetail/caracterdetail/caracterdetail.component';
 import { StuffdetailComponent } from './StuffDetail/stuffdetail/stuffdetail.component';
-
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { StuffdetailComponent } from './StuffDetail/stuffdetail/stuffdetail.comp
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
     AppRoutingModule,
     FormsModule,
     TextFieldModule,
@@ -64,6 +66,7 @@ import { StuffdetailComponent } from './StuffDetail/stuffdetail/stuffdetail.comp
     MatIconModule,
     MatButtonModule,
     NgbModule,
+    NgxMatSelectSearchModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

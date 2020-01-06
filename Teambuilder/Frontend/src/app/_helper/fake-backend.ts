@@ -3,10 +3,14 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-import { User, Caracter, Stuff } from '../_model';
+import { User, Caracter, Stuff, Team, TeamCaracter } from '../_model';
 import { registerLocaleData } from '@angular/common';
 
-const users: User[] = [{ idUser: 1, username: 'test', password: 'test', email: 'User', lvlRole:0 }];
+const users: User[] = [
+    { idUser: 1, username: 'test', password: 'test', email: 'User', lvlRole:0 },
+    { idUser: 2, username: 'test2', password: 'test', email: 'User', lvlRole:0 },
+
+];
 const caracters: Caracter[] = [{
     "idCaracter": 0,
     "name": "Roger",
@@ -700,6 +704,113 @@ const stuffs: Stuff[] = [{
 }
 ]
 
+const teamsList: Team[] =[
+    {
+        "idTeam": 230,
+        "idUser": 1
+    },
+    {
+        "idTeam": 231,
+        "idUser": 1
+    },
+    {
+        "idTeam": 232,
+        "idUser": 1
+    },
+    {
+        "idTeam": 233,
+        "idUser": 1
+    },    {
+        "idTeam": 234,
+        "idUser": 2
+    },
+    {
+        "idTeam": 235,
+        "idUser": 2
+    },
+    {
+        "idTeam": 236,
+        "idUser": 2
+    },
+    {
+        "idTeam": 237,
+        "idUser": 2
+    },
+]
+
+const teamCaracterList: TeamCaracter[] = [
+    {
+        "idTeam": 230,
+        "idCaracter": 6,
+        "idStuff": 3
+    },
+    {
+        "idTeam": 230,
+        "idCaracter": 1,
+        "idStuff": 7
+    },    
+    {
+        "idTeam": 230,
+        "idCaracter": 3,
+        "idStuff": 9
+    },   
+    {
+        "idTeam": 230,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 230,
+        "idCaracter": 1,
+        "idStuff": 2
+    },    
+    {
+        "idTeam": 230,
+        "idCaracter": 2,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },   
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 231,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 232,
+        "idCaracter": 1,
+        "idStuff": 3
+    },    
+    {
+        "idTeam": 232,
+        "idCaracter": 1,
+        "idStuff": 3
+    },
+]
+
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -728,9 +839,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return stuffList();
                 case url.endsWith('/stuff/detail') && method === 'POST':
                     return getStuff();
-
+                case url.endsWith('/teams') && method === 'POST':
+                    return getTeams();
+                case url.endsWith('/team') && method === 'POST':
+                    return getTeam();
                 case url.endsWith('/caracter/detail') && method === 'POST':
                     return getCaracter();
+                // case url.endsWith('/team/upload') && method === 'POST':
+                //     return uploadTeam();
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
@@ -754,18 +870,44 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             })
         }
 
+        // function uploadTeam() {
+        //     const { team } = body;
+        //     // console.log(body)
+        //     // teamCaracterList.forEach((element, index) => {
+        //     //     if (element.idTeam === team[0].idTeam)
+        //     //     teamCaracterList.splice(index, 1);
+        //     // });
+        //     console.log(team)
+        //     console.log(teamCaracterList);
+        // }
+
         function getStuff() {
             const { id } = body;
             const stuff = stuffs.find(x => x.idStuff === id);
             if (!stuff) return error('Stuff non trouvé');
-            return ok({stuff})
+            return ok({stuff});
         }
 
         function getCaracter() {
             const { id } = body;
             const caracter = caracters.find(x => x.idCaracter === id);
             if (!caracter) return error('Stuff non trouvé');
-            return ok({caracter})
+            return ok({caracter});
+        }
+
+        function getTeams() {
+            const { idUser } = body;
+            const teams = teamsList.filter(x => x.idUser === idUser);
+            if (!teams) return error('Teams non trouvé');
+            return ok({teams});
+        }
+        
+        function getTeam() {
+            const { idTeam } = body;
+            const team = teamCaracterList.filter(x => x.idTeam === idTeam);
+            console.log(idTeam)
+            if (!team) return error('Team non trouvé');
+            return ok({team});
         }
 
 
