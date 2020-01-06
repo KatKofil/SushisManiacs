@@ -18,5 +18,5 @@ export class Contact {
     email: string;
 
     @Column()
-    lvlRole: string;
+    lvlRole: number;
 }

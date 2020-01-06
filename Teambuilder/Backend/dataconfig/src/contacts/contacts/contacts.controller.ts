@@ -12,7 +12,7 @@ export class ContactsController {
         return this.contactsService.findAll();
     }
 
-    @Post('createcontact')
+    @Post('users/register')
     async create(@Body() contactData: Contact): Promise<any> {
         return this.contactsService.create(contactData);
     }  

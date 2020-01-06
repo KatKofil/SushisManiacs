@@ -22,7 +22,7 @@ export class RegisterService {
 
     register(username: string, password: string, email: string) {
       console.log("on y passe")
-        return this.http.post(`${environment.apiUrl}/users/register`, { username, password, email })
+        return this.http.post(`${environment.apiUrl}/auth/register`, { username, password, email })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));

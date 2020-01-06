@@ -33,7 +33,6 @@ export class AuthService {
     }
 
     public async register(user: User): Promise<any>{
-        console.log("ta mere")
         return this.userService.create(user)
         
     } 
