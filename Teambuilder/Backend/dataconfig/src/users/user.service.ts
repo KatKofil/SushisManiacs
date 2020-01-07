@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from '../user.entity';
+import { User } from './user.entity';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -17,11 +18,19 @@ export class UserService {
             }
         });
     }
+    
+    async compareHash(password: string|undefined, hash: string|undefined): Promise<boolean> {
+        return bcrypt.compare(password, hash);
+      }
 
-    async findById(id: number): Promise<User> {
+    async getUserByUsername(pseudo: string): Promise<User> {
+        return (await this.userRepository.find({ pseudo }))[0];
+      }
+
+    async findByPseudo(pseudo: string): Promise<User | undefined> {
         return await this.userRepository.findOne({
             where: {
-                id: id,
+                pseudo: pseudo,
             }
         });
     }
