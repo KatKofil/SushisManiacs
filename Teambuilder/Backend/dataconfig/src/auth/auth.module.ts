@@ -1,26 +1,19 @@
-import * as passport from 'passport';
-import {
-  Module,
-  NestModule,
-  MiddlewareConsumer,
-  RequestMethod,
-} from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { JwtStrategy } from './jwt.strategy';
-import { AuthController } from './auth.controller';
-import { UserModule } from '../users/user.module';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from '../users/user.entity';
+import { JwtModule } from '@nestjs/jwt';
+import { UserService } from "../users/user.service";
+import { AuthService } from '../auth/auth.service';
+import { AuthController } from "../auth/auth/auth.controller";
 
 @Module({
-  imports: [UserModule],
-  providers: [AuthService, JwtStrategy],
-  controllers: [AuthController],
+  imports: [TypeOrmModule.forFeature([User]),
+  JwtModule.register({
+      secretOrPrivateKey: 'secret12356789'
+  })
+  ],
+  providers: [AuthService, UserService],
+  controllers: [AuthController]
 })
-export class AuthModule implements NestModule {
-  public configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(passport.authenticate('jwt', { session: false }))
-      .forRoutes(
-        { path: '/products', method: RequestMethod.ALL },
-        { path: '/products/*', method: RequestMethod.ALL });
-  }
-}
+
+export class AuthModule {}

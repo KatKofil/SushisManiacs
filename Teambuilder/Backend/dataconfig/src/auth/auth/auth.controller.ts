@@ -1,12 +1,12 @@
 import { Controller, Post, HttpStatus, HttpCode, Get, Response, Body } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { User } from '../users/user.entity';
-import { UserService } from '../users/user.service';
+import { AuthService } from '../auth.service';
+import { User } from '../../users/user.entity';
+import { UserService } from '../../users/user.service';
 import * as crypto from 'crypto';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private readonly authService: AuthService,
+    constructor(private authService: AuthService,
       private readonly userService: UserService) {}
 
     @Post('login')  
@@ -19,7 +19,7 @@ export class AuthController {
       
       if (user) {
         if (await this.userService.compareHash(body.password, user.hashPass)) {
-          return res.status(HttpStatus.OK).json(await this.authService.createToken(user.idUser, user.pseudo));
+          return res.status(HttpStatus.OK).json(await this.authService.login(user));
         }
       }
   
@@ -51,7 +51,6 @@ export class AuthController {
             user.hashPass = undefined;
           }
         }
-    
         return res.status(HttpStatus.OK).json(user);
       }
     }
