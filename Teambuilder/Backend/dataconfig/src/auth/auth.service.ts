@@ -26,6 +26,7 @@ public async login(user: User): Promise< any | { status: number }>{
        expires_in: 3600,
        access_token: accessToken,
        user_id: payload,
+       email: userData.email,
        status: 200
     };
 

@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { User } from '../_model/user';
+import { User } from '../_model';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterService {
@@ -21,10 +21,12 @@ export class RegisterService {
     }
 
     register(username: string, password: string, email: string) {
-      console.log("on y passe")
+        console.log(username + password)
+        console.log(email)
         return this.http.post(`${environment.apiUrl}/auth/register`, { username, password, email })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
+                console.log(user)
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
                 return user;

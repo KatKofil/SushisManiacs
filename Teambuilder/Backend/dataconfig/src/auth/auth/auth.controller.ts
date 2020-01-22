@@ -16,9 +16,9 @@ export class AuthController {
       }
   
       const user = await this.userService.getUserByUsername(body.username);
-      
       if (user) {
-        if (await this.userService.compareHash(body.password, user.hashPass)) {
+        const pass = crypto.createHmac('sha256', body.password + user.salt).digest('hex');
+        if (await this.userService.compareHash(pass, user.hashPass)) {
           return res.status(HttpStatus.OK).json(await this.authService.login(user));
         }
       }
@@ -51,6 +51,6 @@ export class AuthController {
             user.hashPass = undefined;
           }
         }
-        return res.status(HttpStatus.OK).json(user);
+        return res.status(HttpStatus.OK).json(await this.authService.login(user));
       }
     }

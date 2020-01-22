@@ -20,7 +20,10 @@ export class UserService {
     }
     
     async compareHash(password: string|undefined, hash: string|undefined): Promise<boolean> {
-        return bcrypt.compare(password, hash);
+        if (password === hash)
+            return true;
+        return false;
+        //return bcrypt.compare(password, hash);
       }
 
     async getUserByUsername(pseudo: string): Promise<User> {

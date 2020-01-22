@@ -61,6 +61,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     this.loading = true;
+    console.log("boerdel")
     this.registerService.register(this.f.username.value, this.f.password.value, this.f.email.value)
         .pipe(first())
         .subscribe(

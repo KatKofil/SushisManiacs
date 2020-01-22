@@ -1,8 +1,7 @@
 export class User {
-    idUser: number;
-    username: string;
-    password: string;
+    expires_in: number;
+    access_token: string;
+    user_id: string;
     email: string;
-    lvlRole: number;
-    token?: string;
+    status: number;
 }

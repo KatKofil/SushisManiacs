@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 
-import { fakeBackendProvider } from './_helper/fake-backend';
+//import { fakeBackendProvider } from './_helper/fake-backend';
 import { JwtInterceptor } from './_helper/jwt.interceptor';
 import { ErrorInterceptor } from './_helper/error.interceptor';
 import { ProfileComponent } from './Profile/profile/profile.component';
