@@ -5,14 +5,16 @@ import { JwtModule } from '@nestjs/jwt';
 import { UserService } from "../users/user.service";
 import { AuthService } from '../auth/auth.service';
 import { AuthController } from "../auth/auth/auth.controller";
+import { jwtConstants } from '../constants';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User]),
   JwtModule.register({
-      secretOrPrivateKey: 'secret12356789'
+      secret: jwtConstants.secret
   })
   ],
-  providers: [AuthService, UserService],
+  providers: [AuthService, UserService, JwtStrategy],
   controllers: [AuthController]
 })
 

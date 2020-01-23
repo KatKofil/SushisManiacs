@@ -1,26 +1,26 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { Team } from '../team.entity';
-import { TeamsService } from '../teams.service';
+import { TeamCaracter } from '../teamcaracter.entity';
+import { TeamCaracterService } from '../teamcaracter.service';
 import { Post,Put, Delete, Body, Param } from  '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('teams')
-export class TeamsController {
-    constructor(private teamsService: TeamsService){}
+export class TeamsCaracterController {
+    constructor(private teamsService: TeamCaracterService){}
     
     @Get()
-    index(): Promise<Team[]> {
+    index(): Promise<TeamCaracter[]> {
         return this.teamsService.findAll();
     }
 
     @Post('createteams')
-    async create(@Body() teamData: Team): Promise<any> {
+    async create(@Body() teamData: TeamCaracter): Promise<any> {
         return this.teamsService.create(teamData);
     }  
 
     @UseGuards(AuthGuard('jwt'))
     @Post(':idTeam/update')
-    async update(@Param('idTeam') id, @Body() teamData: Team): Promise<any> {
+    async update(@Param('idTeam') id, @Body() teamData: TeamCaracter): Promise<any> {
         teamData.idTeam = Number(id);
         console.log('Update #' + teamData.idTeam)
         return this.teamsService.update(teamData);

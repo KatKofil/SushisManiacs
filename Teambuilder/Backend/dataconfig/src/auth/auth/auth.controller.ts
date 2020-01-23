@@ -9,6 +9,7 @@ export class AuthController {
     constructor(private authService: AuthService,
       private readonly userService: UserService) {}
 
+    
     @Post('login')  
     async loginUser(@Response() res: any, @Body() body: any) {
       if (!(body && body.username && body.password)) {
@@ -25,6 +26,7 @@ export class AuthController {
   
       return res.status(HttpStatus.FORBIDDEN).json({ message: 'Username or password wrong!' });
     }
+
     @Post('register')
     async registerUser(@Response() res: any, @Body() body: any) {
         if (!(body && body.username && body.password && body.email)) {
