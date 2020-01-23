@@ -21,8 +21,6 @@ export class RegisterService {
     }
 
     register(username: string, password: string, email: string) {
-        console.log(username + password)
-        console.log(email)
         return this.http.post(`${environment.apiUrl}/auth/register`, { username, password, email })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes

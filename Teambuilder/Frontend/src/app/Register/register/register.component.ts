@@ -44,8 +44,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
         username: ['', Validators.required],
-        password: ['', Validators.required],
-        email: ['', Validators.required]
+        password: ['', Validators.required]
     });
 
     // get return url from route parameters or default to '/'
@@ -61,8 +60,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     this.loading = true;
-    console.log("boerdel")
-    this.registerService.register(this.f.username.value, this.f.password.value, this.f.email.value)
+    this.registerService.register(this.f.username.value, this.f.password.value, this.emailFormControl.value)
         .pipe(first())
         .subscribe(
             data => {
