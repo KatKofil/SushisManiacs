@@ -38,8 +38,7 @@ export class AuthController {
         } else {
           var salt = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
           var pass = crypto.createHmac('sha256', body.password + salt).digest('hex');
-          var newContact: User = {
-            "idUser": 2,
+          var newContact: any = {
             "pseudo": body.username,
             "hashPass": pass,
             "email": body.email,

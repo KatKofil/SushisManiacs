@@ -38,7 +38,7 @@ export class UserService {
         });
     }
 
-    async create(user: User): Promise<User> {
+    async create(user: any): Promise<User> {
         return await this.userRepository.save(user);
     }
 }
