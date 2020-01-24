@@ -13,7 +13,7 @@ export class StuffService {
     async findById(id: number): Promise<Stuff> {
         return await this.stuffRepository.findOne({
             where: {
-                idstuff: id,
+                idStuff: id,
             }
         });
     }

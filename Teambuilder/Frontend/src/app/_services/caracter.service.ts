@@ -8,15 +8,18 @@ import { Caracter } from '../_model';
 
 @Injectable({ providedIn: 'root' })
 export class CaracterService {
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    caracterList() {
-        console.log("on y passe bien")
-        return this.http.get(`${environment.apiUrl}/caracter`) as Observable<Caracter[]>;
-    }
-
+  caracterList() {
+      return this.http.get(`${environment.apiUrl}/caracter`) as Observable<Caracter[]>;
+  }
 
   getCaracter(id: number){
     return this.http.post(`${environment.apiUrl}/caracter/detail`, { id }) as Observable<Caracter[]>;
+  }
+
+  postCaracter(caracter: any){
+    console.table(caracter);
+    return this.http.post(`${environment.apiUrl}/caracter/create`, {caracter}) as Observable<Caracter[]>;
   }
 }

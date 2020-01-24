@@ -22,6 +22,7 @@ export class CaracterController {
 
     @Post('create')
     async createCaracter(@Response() res: any, @Body() body: any) {
+        console.table(body)
         return res.status(HttpStatus.OK).json(await this.caracterService.create(body));
     }
 
