@@ -6,6 +6,8 @@ import { TeamsModule } from './teams/teams.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from "./users/user.module";
+import { CaracterModule } from "./Caracter/caracter.module";
+import { StuffModule } from "./Stuff/stuff.module";
 
 @Module({
   imports: [ContactsModule,TeamsModule,
@@ -16,7 +18,9 @@ import { UserModule } from "./users/user.module";
     synchronize: true,
   }),
   UserModule,
-  AuthModule],
+  AuthModule,
+  StuffModule,
+  CaracterModule],
   controllers: [AppController],
   providers: [AppService],
 })

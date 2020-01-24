@@ -1,24 +1,24 @@
 <div *ngIf="stuff" class="container">
-    <h2> {{stuff.stuff.name}} </h2>
+    <h2> {{stuff.name}} </h2>
 
-    <p> {{stuff.stuff.describStuff}} </p>
+    <p> {{stuff.describStuff}} </p>
 
     <h3>Bonus Points</h3>
     <mat-list>
-        <mat-list-item> Maki x {{stuff.stuff.pointMaki | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Brochette x {{stuff.stuff.pointBrochette | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Sushi x {{stuff.stuff.pointSushi | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Sashimi x {{stuff.stuff.pointSashimi | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Maki x {{stuff.pointMaki | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Brochette x {{stuff.pointBrochette | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Sushi x {{stuff.pointSushi | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Sashimi x {{stuff.pointSashimi | number : fractionSize}} </mat-list-item>
     </mat-list>
     <h3>Bonus Time</h3>
     <mat-list>
-        <mat-list-item> Maki / {{stuff.stuff.timeMaki | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Brochette / {{stuff.stuff.timeBrochette | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Sushi / {{stuff.stuff.timeSushi | number : fractionSize}} </mat-list-item>
-        <mat-list-item> Sashimi / {{stuff.stuff.timeSashimi | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Maki / {{stuff.timeMaki | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Brochette / {{stuff.timeBrochette | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Sushi / {{stuff.timeSushi | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Sashimi / {{stuff.timeSashimi | number : fractionSize}} </mat-list-item>
     </mat-list>
     <h3>Bonus Saturation</h3>
     <mat-list>
-        <mat-list-item> Saturation / {{stuff.stuff.saturation | number : fractionSize}} </mat-list-item>
+        <mat-list-item> Saturation / {{stuff.saturation | number : fractionSize}} </mat-list-item>
     </mat-list>
 </div>
